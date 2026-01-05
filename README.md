@@ -21,4 +21,4 @@ This is a Python-based web application that extracts text from images and transl
 3. Open browser and go to `http://127.0.0.1:5000`
 
 ## Author
-Thanusree
+Thanu Sree Sai
