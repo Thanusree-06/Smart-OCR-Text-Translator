@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Smart OCR & Translator</title>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand">
+            <img src="/static/logo.svg" alt="logo" class="logo" />
+            <div class="brand-text">
+                <h1>Smart OCR • Translator</h1>
+                <p>Extract • Translate • Share</p>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="themeToggle" class="icon-btn">🌙</button>
+        </div>
+    </header>
+
+    <main class="page">
+
+        <!-- LEFT PANEL (IMAGE OCR) -->
+        <section class="left-panel card">
+            <h2>Upload Image</h2>
+            <div class="upload-area">
+                <label class="file-label">
+                    <input id="imageInput" type="file" accept="image/*" />
+                    <div class="upload-inner">
+                        <div class="upload-icon">📤</div>
+                        <div class="upload-text">Click to choose or drag & drop</div>
+                        <div class="small">Supported: JPG, PNG, HEIC</div>
+                    </div>
+                </label>
+                <div id="previewArea" class="preview-area hidden">
+                    <img id="previewImage" alt="preview" />
+                </div>
+            </div>
+
+            <div class="options">
+                <label>Output Language</label>
+                <select id="imageLang"></select>
+                <button id="ocrTranslateBtn" class="primary-btn">Extract & Translate</button>
+            </div>
+        </section>
+
+        <!-- RIGHT PANEL (RESULTS) -->
+        <section class="right-panel card">
+            <div class="status-row">
+                <div id="spinner" class="spinner hidden"></div>
+                <div id="statusText" class="status-text">Ready</div>
+            </div>
+
+            <h3>Extracted Text</h3>
+            <div id="extractedBox" class="text-box">No image processed yet.</div>
+
+            <h3>Translated Text</h3>
+            <div id="translatedBox" class="text-box">No translation yet.</div>
+
+            <div class="extras">
+                <button id="copyExtract" class="mini-btn">Copy Extracted</button>
+                <button id="copyTranslate" class="mini-btn">Copy Translated</button>
+            </div>
+
+            <hr style="margin:20px 0; border-color:rgba(255,255,255,0.08)">
+
+            <!-- NEW TEXT TRANSLATION -->
+            <h3>Enter Text</h3>
+            <textarea id="textInput" class="text-box" placeholder="Type text to translate..."></textarea>
+
+            <label>Translate To:</label>
+            <select id="textLang"></select>
+
+            <button id="textTranslateBtn" class="primary-btn" style="margin-top:10px;">Translate Text</button>
+
+            <h3>Translated Output</h3>
+            <div id="textTranslatedBox" class="text-box">No translation yet.</div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="frame left">Advanced UI • Dark/Light • Spinner • Responsive</div>
+        <div class="frame right">Made by Thanusree</div>
+    </footer>
+
+    <script src="/static/main.js"></script>
+</body>
+</html>
